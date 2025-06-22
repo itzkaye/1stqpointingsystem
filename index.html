@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recitation Points</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 Enter Your Ticket Code</h1>
+    <input type="text" id="codeInput" placeholder="Enter your code here" maxlength="4">
+    <button onclick="checkCode()">Submit</button>
+    <div id="result"></div>
+    <audio id="celebrateSound" src="cheer.mp3"></audio>
+  </div>
+
+  <script src="codes.js"></script>
+  <script>
+    function checkCode() {
+      const input = document.getElementById('codeInput').value.toUpperCase();
+      const resultDiv = document.getElementById('result');
+      const sound = document.getElementById('celebrateSound');
+
+      if (codes[input]) {
+        sound.play();
+        resultDiv.innerHTML = `<h2>🎉 Congratulations!</h2><p>You earned <strong>${codes[input]} points</strong>!</p>`;
+        resultDiv.classList.add("success");
+      } else {
+        resultDiv.innerHTML = "<p>❌ Invalid code. Please try again.</p>";
+        resultDiv.classList.remove("success");
+      }
+    }
+  </script>
+</body>
+</html>
