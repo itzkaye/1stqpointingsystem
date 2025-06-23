@@ -1,4 +1,4 @@
-const codes = {
+{
   "MFC7": 3,
   "WBO0": 3,
   "OAM5": 2,
@@ -198,5 +198,5 @@ const codes = {
   "TL45": 3,
   "LHC6": 2,
   "14J0": 3,
-  "TMSJ": 3,
-};
+  "TMSJ": 3
+}
